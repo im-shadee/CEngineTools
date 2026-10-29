@@ -52,7 +52,7 @@ static inline vec2f vec2f_down() { return vec2f_reverse(vec2f_up()); }
 static inline vec2f vec2f_add(const vec2f u, const vec2f v) { return (vec2f){u.x + v.x, u.y + v.y}; }
 
 /** Multiplies a vec2 with a constant and returns the result. */
-static inline vec2f vec2f_scale(const vec2f u, float k) { return (vec2f){u.x * k, u.y * k}; }
+static inline vec2f vec2f_scale(const vec2f u, const float k) { return (vec2f){u.x * k, u.y * k}; }
 
 /** Checks whether a vec2 is equal to another.
  * (u_i == v_i with i in {1..N} where N is the vector size)
@@ -61,7 +61,7 @@ static inline vec2f vec2f_scale(const vec2f u, float k) { return (vec2f){u.x * k
  *  - 1 if u equals v
  *  - 0 otherwise
  */
-static inline int vec2f_equals(const vec2f u, const vec2f v, float epsilon) {
+static inline int vec2f_equals(const vec2f u, const vec2f v, const float epsilon) {
     return f32_abs(u.x - v.x) < epsilon && f32_abs(u.y - v.y) < epsilon;
 }
 
@@ -115,7 +115,7 @@ static inline vec3f vec3f_back() { return vec3f_reverse(vec3f_forward()); }
 static inline vec3f vec3f_add(const vec3f u, const vec3f v) { return (vec3f){u.x + v.x, u.y + v.y, u.z + v.z}; }
 
 /** Multiplies a vec3 with a constant and returns the result. */
-static inline vec3f vec3f_scale(const vec3f u, float k) { return (vec3f){u.x * k, u.y * k, u.z * k}; }
+static inline vec3f vec3f_scale(const vec3f u, const float k) { return (vec3f){u.x * k, u.y * k, u.z * k}; }
 
 /** Checks whether a vec3 is equal to another.
  * (u_i == v_i with i in {1..N} where N is the vector size)
@@ -124,7 +124,7 @@ static inline vec3f vec3f_scale(const vec3f u, float k) { return (vec3f){u.x * k
  *  - 1 if u equals v
  *  - 0 otherwise
  */
-static inline int vec3f_equals(const vec3f u, const vec3f v, float epsilon) {
+static inline int vec3f_equals(const vec3f u, const vec3f v, const float epsilon) {
     return f32_abs(u.x - v.x) < epsilon &&
            f32_abs(u.y - v.y) < epsilon &&
            f32_abs(u.z - v.z) < epsilon;
@@ -187,7 +187,7 @@ static inline vec2s vec2s_down() { return vec2s_reverse(vec2s_up()); }
 static inline vec2s vec2s_add(const vec2s u, const vec2s v) { return (vec2s){u.x + v.x, u.y + v.y}; }
 
 /** Multiplies a vec2 with a constant and returns the result. */
-static inline vec2s vec2s_scale(const vec2s u, int16_t k) { return (vec2s){u.x * k, u.y * k}; }
+static inline vec2s vec2s_scale(const vec2s u, const int16_t k) { return (vec2s){u.x * k, u.y * k}; }
 
 /** Checks whether a vec2 is equal to another.
  * (u_i == v_i with i in {1..N} where N is the vector size)
@@ -250,7 +250,7 @@ static inline vec3s vec3s_back() { return vec3s_reverse(vec3s_forward()); }
 static inline vec3s vec3s_add(const vec3s u, const vec3s v) { return (vec3s){u.x + v.x, u.y + v.y, u.z + v.z}; }
 
 /** Multiplies a vec3 with a constant and returns the result. */
-static inline vec3s vec3s_scale(const vec3s u, int16_t k) { return (vec3s){u.x * k, u.y * k, u.z * k}; }
+static inline vec3s vec3s_scale(const vec3s u, const int16_t k) { return (vec3s){u.x * k, u.y * k, u.z * k}; }
 
 /** Checks whether a vec3 is equal to another.
  * (u_i == v_i with i in {1..N} where N is the vector size)
